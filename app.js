@@ -7,11 +7,11 @@ const tfnRouter = require('./src/router/tfnRouter');
 
 const port = 8000;
 
-app.use('/', tfnRouter);
+// app.use('/', tfnRouter);
 
 app.use('/', (req, res) => {
     // TO DO home page
-    return res.status(200).send(null);
+    return res.status(200).send({test:'test'});
 });
 
 app.listen(port, () => {
