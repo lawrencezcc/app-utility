@@ -11,7 +11,7 @@ app.use('/', tfnRouter);
 
 app.use('/', (req, res) => {
     // TO DO home page
-    return res.status(200).json(null);
+    return res.status(200).send(null);
 });
 
 app.listen(port, () => {
