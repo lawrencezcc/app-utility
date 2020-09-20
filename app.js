@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 
-const tfnRouter = require('./router/tfnRouter');
+const tfnRouter = require('./src/router/tfnRouter');
 
 const port = 8000;
 
