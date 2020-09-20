@@ -5,13 +5,13 @@ const app = express();
 
 const tfnRouter = require('./src/router/tfnRouter');
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 
-app.use('/app', tfnRouter);
+app.use('/', tfnRouter);
 
 app.use('/', (req, res) => {
     // TO DO home page
-    return res.send({test:'test'});
+    return res.status(200).send(null);
 });
 
 app.listen(port, () => {
