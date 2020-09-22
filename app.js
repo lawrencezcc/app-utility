@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   console.log(req.protocol);
   const protocol = req.get('X-Forwarded-Proto') || req.protocol;
   if (protocol === 'http') {
-    res.redirect(`${req.protocol}s://${req.hostname}${req.originalUrl}`);
+    res.redirect(`${protocol}s://${req.hostname}${req.originalUrl}`);
   } else {
     next();
   }
