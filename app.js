@@ -12,10 +12,12 @@ app.use(cors());
 
 app.use((req, res, next) => {
   console.log(req.protocol);
-  if (req.protocol === 'http') {
+  const protocol = req.get('X-Forwarded-Proto') || req.protocol;
+  if (protocol === 'http') {
     res.redirect(`${req.protocol}s://${req.hostname}${req.originalUrl}`);
+  } else {
+    next();
   }
-  next();
 });
 
 app.use('/', tfnRouter);
