@@ -11,6 +11,7 @@ const port = process.env.PORT || 8000;
 app.use(cors());
 
 app.use((req, res, next) => {
+  console.log(req.protocol);
   if (req.protocol === 'http') {
     res.redirect(`${req.protocol}s://${req.hostname}${req.originalUrl}`);
   }
