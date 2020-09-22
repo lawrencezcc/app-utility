@@ -10,10 +10,11 @@ const port = process.env.PORT || 8000;
 
 app.use(cors());
 
-app.use('*', (req, res) => {
+app.use((req, res, next) => {
   if (req.protocol === 'http') {
     res.redirect(`${req.protocol}s://${req.hostname}${req.originalUrl}`);
   }
+  next();
 });
 
 app.use('/', tfnRouter);
