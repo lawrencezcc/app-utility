@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.static('public'));
 
 app.use((req, res, next) => {
-  const protocol = req.get('X-Forwarded-Proto');
+  const protocol = req.get('X-Forwarded-Proto') || req.protocol;
   console.log(protocol);
   if (protocol === 'http') {
     res.redirect(`${protocol}s://${req.hostname}${req.originalUrl}`);
