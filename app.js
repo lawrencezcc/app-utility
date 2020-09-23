@@ -10,8 +10,6 @@ const port = process.env.PORT || 8000;
 
 app.use(cors());
 
-app.use(express.static('public'));
-
 app.use((req, res, next) => {
   console.log('<<<<<<<<<<<<<<<<<<<<<<: ', 'in');
   const protocol = req.get('X-Forwarded-Proto') || req.protocol;
@@ -26,10 +24,7 @@ app.use((req, res, next) => {
 
 app.use('/', tfnRouter);
 
-app.use('/', (req, res) => {
-  // TO DO home page
-  return res.status(200).send(null);
-});
+app.use('/', express.static('public'));
 
 app.listen(port, () => {
   console.log(`Server start listening on Port ${port}`);
