@@ -10,6 +10,6 @@ export default class FooterWrapper extends React.Component {
   }
 
   render() {
-    return <Footer className="footer">Footer</Footer>;
+    return <Footer className="footer"></Footer>;
   }
 }

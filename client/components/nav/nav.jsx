@@ -11,7 +11,6 @@ export default class Nav extends React.Component {
       defaultKey: 'tfn',
       data: props.navData,
     };
-    console.log(this.state);
   }
 
   render() {
