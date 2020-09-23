@@ -54,7 +54,7 @@ module.exports = (env) => {
     devtool: 'source-map',
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Mini Bid',
+        title: 'Finance Helper Utility',
         filename: path.resolve(__dirname, 'public/index.html'),
         reactWrapperId: 'app',
         template: path.resolve(__dirname, 'client/pages/template/index.html'),
