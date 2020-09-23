@@ -10,9 +10,10 @@ const port = process.env.PORT || 8000;
 
 app.use(cors());
 
+app.use(express.static('public'));
+
 app.use((req, res, next) => {
-  console.log(req.protocol);
-  const protocol = req.get('X-Forwarded-Proto') || req.protocol;
+  const protocol = req.get('X-Forwarded-Proto');
   if (protocol === 'http') {
     res.redirect(`${protocol}s://${req.hostname}${req.originalUrl}`);
   } else {
