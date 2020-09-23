@@ -29,15 +29,11 @@ export default class ContentWrapper extends React.Component {
     return (
       <Content className="content">
         <Row>
-          <Col className="c-col" flex span={4}>
-            4
-          </Col>
+          <Col className="c-col" flex span={4}></Col>
           <Col className="c-col" flex span={16}>
             {tabSwitcher(this.state.containerType)}
           </Col>
-          <Col className="c-col" flex span={4}>
-            4
-          </Col>
+          <Col className="c-col" flex span={4}></Col>
         </Row>
       </Content>
     );

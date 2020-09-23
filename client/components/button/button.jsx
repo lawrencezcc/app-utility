@@ -1,23 +1,17 @@
-import React, { useEffect, useRef } from 'react';
-import EventBus from '../../utils/eventBus';
+import React from 'react';
+import { Button } from 'antd';
 
-export const Button = (props) => {
-  let classNames = props.classNames || '';
-  if (Array.isArray(classNames)) {
-    classNames = `btn ${classNames.join(' ')}`;
-  }
-
-  const buttonRef = useRef(null);
-  useEffect(() => {
-    const eventBus = new EventBus({ el: buttonRef, events: props.events });
-    if (eventBus) {
-      eventBus.attachEvents();
-    }
-  }, []);
-
+export const Btn = (props) => {
+  const handleBtnClick = (e) => {
+    props.handleBtnClick(e, { isLoading: true, text: 'Generating...' });
+  };
   return (
-    <div ref={buttonRef} className={classNames}>
-      {props.dataModel.name}
-    </div>
+    <Button
+      type={props.data.type}
+      loading={props.data.isLoading}
+      onClick={handleBtnClick}
+    >
+      {props.data.text}
+    </Button>
   );
 };

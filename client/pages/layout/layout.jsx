@@ -1,9 +1,7 @@
 import React from 'react';
 
-import { Container } from '../../components/container/container';
-
-import { HeaderWrapper } from '../../components/header/header';
-import { FooterWrapper } from '../../components/footer/footer';
+import HeaderWrapper from '../../components/header/header';
+import FooterWrapper from '../../components/footer/footer';
 import ContentWrapper from '../../components/content/content';
 
 import './style/index.scss';
