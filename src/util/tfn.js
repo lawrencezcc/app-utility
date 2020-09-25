@@ -79,7 +79,13 @@ class TFNUtility {
     if (!this.isTFNValid(tfn)) {
       tfn = this.refactorTFN(tfn);
     }
-    return +tfn.join('');
+    // temp solution
+    const tfnNumber = +tfn.join('');
+    if (!tfnNumber || tfnNumber <= 0 || tfn.length !== 9) {
+      this.getTFN();
+    }
+
+    return tfnNumber;
   }
 }
 
