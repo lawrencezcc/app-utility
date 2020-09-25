@@ -1,3 +1,7 @@
 # Build Systems #
 #################
 node_modules
+
+public/main.js.map
+
+.vscode/

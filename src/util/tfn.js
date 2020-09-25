@@ -54,8 +54,9 @@ class TFNUtility {
       targetPair = pairs.find((pair) => pair.weight === remainder);
       // if targetPair.value === 0;
       // handle here
-
-      targetPair.value = targetPair.value - 1;
+      if (targetPair.value >= 1) {
+        targetPair.value = targetPair.value - 1;
+      }
     }
     const reorderedPairs = new Array(tfn.length);
     pairs.forEach((pair) => {
@@ -71,15 +72,24 @@ class TFNUtility {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  getTFN() {
+  _getTFN() {
     let tfn = this.generateTempTFN();
-    // tfn first num can't be 0
 
     console.log('f: ', tfn);
     if (!this.isTFNValid(tfn)) {
       tfn = this.refactorTFN(tfn);
     }
     return +tfn.join('');
+  }
+
+  getFacadeTFN() {
+    const tfn = _getTFN();
+    if (!tfn || tfn <= 0 || tfn.length !== 9) {
+      console.log('>>>>>>>>>>>>>>>>>>>>');
+      console.log('Wrong Number: ', tfn);
+      console.log('<<<<<<<<<<<<<<<<<<<<');
+    }
+    return tfn;
   }
 }
 
