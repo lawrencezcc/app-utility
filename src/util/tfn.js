@@ -83,7 +83,7 @@ class TFNUtility {
   }
 
   getFacadeTFN() {
-    const tfn = _getTFN();
+    const tfn = this._getTFN();
     if (!tfn || tfn <= 0 || tfn.length !== 9) {
       console.log('>>>>>>>>>>>>>>>>>>>>');
       console.log('Wrong Number: ', tfn);
