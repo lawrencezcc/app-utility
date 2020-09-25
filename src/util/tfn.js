@@ -72,7 +72,7 @@ class TFNUtility {
     return Math.floor(Math.random() * (max - min)) + min;
   }
 
-  _getTFN() {
+  getTFN() {
     let tfn = this.generateTempTFN();
 
     console.log('f: ', tfn);
@@ -83,19 +83,12 @@ class TFNUtility {
     const tfnNumber = +tfn.join('');
     if (!tfnNumber || tfnNumber <= 0 || tfn.length !== 9) {
       this.getTFN();
-    }
-
-    return tfnNumber;
-  }
-
-  getFacadeTFN() {
-    const tfn = this._getTFN();
-    if (!tfn || tfn <= 0 || tfn.length !== 9) {
       console.log('>>>>>>>>>>>>>>>>>>>>');
       console.log('Wrong Number: ', tfn);
       console.log('<<<<<<<<<<<<<<<<<<<<');
     }
-    return tfn;
+
+    return tfnNumber;
   }
 }
 
